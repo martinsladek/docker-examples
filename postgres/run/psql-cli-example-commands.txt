@@ -1,0 +1,3 @@
+:: run psql cli
+:: Pass is asdf
+docker run -it --rm --network mars_bridge_postgres postgres psql -h some-postgres -U postgres

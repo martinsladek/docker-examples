@@ -1,0 +1,10 @@
+:: Redis CLI:
+ping
+ping Message
+CONFIG GET loglevel
+CONFIG GET *
+CONFIG SET loglevel "notice"
+CONFIG GET loglevel
+SET name "tutorialspoint"
+GET name
+

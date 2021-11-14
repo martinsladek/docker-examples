@@ -1,0 +1,12 @@
+C:
+cd \dev\docker\_swarm\redis-flask-python-swarm-stack\stackdemo
+docker swarm init
+
+Swarm initialized: current node (wpn9de6mcq9blcugtuf1gyzvv) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-25p9v4g73x2lnw8o47wsfwildl39jkdml64np3cewn9bx5xxgk-5821423bbvmd8bavwf4tzjhji 192.168.65.3:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+

@@ -1,0 +1,41 @@
+
+:: Docker network configuration:
+https://docs.docker.com/engine/tutorials/networkingcontainers/
+
+:: Create bridge
+docker network create -d bridge mars_bridge
+
+:: Docker Hub - Redis
+https://hub.docker.com/_/redis
+
+:: Run Redis within specific netwrok
+docker run --name some-redis --network mars_bridge --rm -d redis
+
+:: Run Redis CLI inside defined network
+docker run -it --network mars_bridge --rm redis redis-cli -h some-redis
+
+:: List Docker networks
+docker network ls
+
+:: Inspect particular Docker network
+docker network inspect mars_bridge
+
+:: Linux:
+docker inspect --format='{{json .NetworkSettings.Networks}}'  some-redis
+:: Windows:
+docker inspect --format="{{json .NetworkSettings.Networks}}" some-redis
+docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" some-redis
+:: Response: 172.21.0.2
+
+:: Connect already existing container to network
+docker network connect mars_bridge some-redis
+
+:: Disconnect container from network
+docker network disconnect mars_bridge some-redis
+
+:: Remove Docker network
+docker network rm mars_bridge
+
+:: Remove all unused networks
+docker network prune
+

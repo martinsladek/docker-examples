@@ -1,0 +1,1 @@
+docker run -it --rm --network mars_bridge --name mars-redis-java-client-running mars-redis-java-client

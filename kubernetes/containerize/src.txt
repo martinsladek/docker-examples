@@ -1,0 +1,4 @@
+https://docs.docker.com/get-started/02_our_app/
+https://blog.martinsladek.com/2023/03/docker-kubernetes-k8s.html
+
+

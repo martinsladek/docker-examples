@@ -6,7 +6,7 @@ kubectl get services
 
 start http://localhost:30001/
 
-pause
+@pause
 
-kubectl delete -f bb.yaml
+@rem kubectl delete -f bb.yaml
 

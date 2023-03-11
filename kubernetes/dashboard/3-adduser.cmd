@@ -8,3 +8,4 @@ notepad files\admin-user-token.txt
 del files\admin-user-token.txt
 
 @echo copy admin token to your browser window
+@pause

@@ -1,0 +1,10 @@
+
+My notes:
+https://blog.martinsladek.com/2023/03/docker-kubernetes-k8s.html
+
+Install Kubernetes Dashboard UI:
+https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+
+Creating sample user:
+https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+

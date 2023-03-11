@@ -2,10 +2,10 @@ kubectl apply -f pod.yaml
 
 kubectl get pods
 
-pause
+@pause
 
 kubectl logs demo
 
-pause
+@pause
 
 kubectl delete -f pod.yaml

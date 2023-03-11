@@ -6,3 +6,4 @@ docker build -t getting-started -f ..\..\Dockerfile .
 
 cd ..\..\
 
+@pause

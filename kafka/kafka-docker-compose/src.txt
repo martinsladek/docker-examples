@@ -1,0 +1,11 @@
+kafka docker compose:
+https://www.baeldung.com/ops/kafka-docker-setup
+
+commands example:
+https://developer.confluent.io/quickstart/kafka-docker/
+
+text tutorial:
+https://www.baeldung.com/spring-kafka
+
+not used - binami image:
+https://hub.docker.com/r/bitnami/kafka/

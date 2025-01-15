@@ -1,0 +1,1 @@
+docker exec -it kafka-docker-compose-kafka-1 kafka-console-consumer --bootstrap-server kafka-docker-compose-kafka-1:29092 --topic quickstart1 --from-beginning

@@ -1,0 +1,1 @@
+docker exec kafka-docker-compose-kafka-1 kafka-topics --bootstrap-server kafka-docker-compose-kafka-1:29092 --create --topic quickstart1

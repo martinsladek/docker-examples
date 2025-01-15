@@ -1,0 +1,17 @@
+# netcat:
+nc localhost 22181
+nc -z localhost 29092
+# Connection to localhost port 29092 [tcp/*] succeeded!
+
+# logs:
+docker-compose logs kafka | grep -i started
+
+# create topic quickstart1:
+docker exec     kafka-docker-compose-kafka-1 kafka-topics           --bootstrap-server kafka-docker-compose-kafka-1:29092 --create --topic quickstart1
+
+# write msg:
+docker exec -it kafka-docker-compose-kafka-1 kafka-console-producer --bootstrap-server kafka-docker-compose-kafka-1:29092 --topic quickstart1
+
+# read msg:
+docker exec -it kafka-docker-compose-kafka-1 kafka-console-consumer --bootstrap-server kafka-docker-compose-kafka-1:29092 --topic quickstart1 --from-beginning
+

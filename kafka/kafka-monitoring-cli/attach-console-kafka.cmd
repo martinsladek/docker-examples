@@ -1,0 +1,1 @@
+docker container attach monitoring-kafka-1

@@ -1,0 +1,25 @@
+
+Kafka Docker:
+https://www.baeldung.com/ops/kafka-docker-setup
+
+Kafka Docker compose yaml :
+https://github.com/eugenp/tutorials/tree/master/spring-kafka
+
+
+mkdir ..\spring-boot-kafka\
+mkdir ..\spring-boot-kafka\git-repo\
+cd    ..\spring-boot-kafka\git-repo\
+
+# tutorial sources for baeldung:
+git clone https://github.com/eugenp/tutorials.git
+
+rem cd ..\spring-boot-kafka\git-repo\
+cd tutorials\spring-kafka\src\main\java\com\baeldung\monitoring
+
+spring-boot-kafka\git-repo\tutorials\spring-kafka\src\main\java\com\baeldung\monitoring
+
+docker-compose up -d
+docker container attach monitoring-kafka-1
+docker-compose down --remove-orphans
+
+

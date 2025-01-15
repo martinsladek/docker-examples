@@ -1,0 +1,1 @@
+docker exec -it monitoring-kafka-1 /bin/bash

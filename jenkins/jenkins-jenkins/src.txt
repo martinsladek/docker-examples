@@ -1,0 +1,6 @@
+Dind = blue ocean support:
+https://www.jenkins.io/doc/book/installing/docker/
+https://www.jenkins.io/doc/book/installing/docker/#on-windows
+
+jenkins:
+https://hub.docker.com/r/jenkins/jenkins/

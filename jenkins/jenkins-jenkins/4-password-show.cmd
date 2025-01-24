@@ -1,0 +1,1 @@
+docker exec -it jenkins-blueocean /bin/bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"

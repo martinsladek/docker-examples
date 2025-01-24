@@ -39,10 +39,11 @@ pause
 docker stop jenkins-blueocean
 docker rm jenkins-blueocean
 @rem docker rm myjenkins-blueocean
+docker image rm myjenkins-blueocean:2.479.3-1
 
 docker stop jenkins-docker
 docker rm jenkins-docker
 
-docker network remove jenkins1
+@rem docker network remove jenkins1
 docker network remove jenkins-blueocean
 

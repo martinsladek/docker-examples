@@ -1,13 +1,48 @@
-call 0-net-up.cmd
-call 1-start-dind.cmd
-call 2-build-jenkins-blueocean.cmd
-call 3-start-jenkins-blueocean.cmd
-call 4-password-show.cmd
+docker network create jenkins-blueocean
+
+docker run --name jenkins-docker --rm --detach ^
+  --privileged --network jenkins-blueocean --network-alias docker ^
+  --env DOCKER_TLS_CERTDIR=/certs ^
+  --volume jenkins-docker-certs:/certs/client ^
+  --volume jenkins-data:/var/jenkins_home ^
+  --publish 2376:2376 ^
+  docker:dind
+
+docker build -t myjenkins-blueocean:2.479.3-1 .
+
+docker run --name jenkins-blueocean ^
+  --restart=on-failure ^
+  --detach ^
+  --network jenkins-blueocean ^
+  --env DOCKER_HOST=tcp://docker:2376 ^
+  --env DOCKER_CERT_PATH=/certs/client ^
+  --env DOCKER_TLS_VERIFY=1 ^
+  --volume jenkins-data:/var/jenkins_home ^
+  --volume jenkins-docker-certs:/certs/client:ro ^
+  --publish 8080:8080 --publish 50000:50000 ^
+  myjenkins-blueocean:2.479.3-1
+
+docker exec -it jenkins-blueocean /bin/bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+
 pause
 
-rem call 5-bash-console.cmd
-rem call 5-logs-show.cmd
-call 6-open-browser.cmd
-call 7-stop-jenkins-blueocean.cmd
-call 8-stop-dind.cmd
-call 9-net-down.cmd
+rem docker exec -it jenkins-blueocean /bin/bash
+
+rem docker logs jenkins-blueocean
+
+start http://localhost:8080/
+
+echo "Press any key to stop Jenkins"
+
+pause
+
+docker stop jenkins-blueocean
+docker rm jenkins-blueocean
+@rem docker rm myjenkins-blueocean
+
+docker stop jenkins-docker
+docker rm jenkins-docker
+
+docker network remove jenkins1
+docker network remove jenkins-blueocean
+

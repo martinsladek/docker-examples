@@ -1,7 +1,9 @@
 docker network create jenkins-blueocean
 
-docker run --name jenkins-docker --rm --detach ^
-  --privileged --network jenkins-blueocean --network-alias docker ^
+docker run --name jenkins-docker ^
+  --rm --detach ^
+  --privileged --network jenkins-blueocean ^
+  --network-alias docker ^
   --env DOCKER_TLS_CERTDIR=/certs ^
   --volume jenkins-docker-certs:/certs/client ^
   --volume jenkins-data:/var/jenkins_home ^
@@ -21,6 +23,9 @@ docker run --name jenkins-blueocean ^
   --volume jenkins-docker-certs:/certs/client:ro ^
   --publish 8080:8080 --publish 50000:50000 ^
   myjenkins-blueocean:2.479.3-1
+
+echo Jenkins initial password
+echo.
 
 docker exec -it jenkins-blueocean /bin/bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
 

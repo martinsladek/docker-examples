@@ -1,2 +1,2 @@
-call run\7-stop-jenkins-blueocean.cmd
-call run\8-stop-dind.cmd
+call run\stop-jenkins-blueocean.cmd
+call run\stop-dind.cmd

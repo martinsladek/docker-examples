@@ -1,4 +1,4 @@
-call uninstall\7-uninstall-jenkins-blueocean.cmd
-call uninstall\8-uninstall-dind.cmd
-call uninstall\9-net-down.cmd
-call uninstall\9-volume-remove.cmd
+call uninstall\uninstall-jenkins-blueocean.cmd
+call uninstall\uninstall-dind.cmd
+call uninstall\net-down.cmd
+call uninstall\volume-remove.cmd

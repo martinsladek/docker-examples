@@ -1,1 +1,2 @@
-docker exec -it jenkins-blueocean /bin/bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+@rem docker exec -it jenkins-blueocean /bin/bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+docker exec -it jenkins-blueocean /bin/bash -c "iter=30; exitCode=1; while [ $exitCode -ne 0 -a $iter -ne 0 ] ; do pass=`cat /var/jenkins_home/secrets/initialAdminPassword 2> /dev/null` ; exitCode=$? ; if [ $exitCode -ne 0 ] ; then echo -n . ; else echo . ; echo Jenkins password: $pass ; break ; fi ; sleep 1 ; iter=$((iter - 1)) ; done"
